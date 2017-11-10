@@ -66,4 +66,19 @@ public class Effet {
     public void effet_foret(Joueur j){
         j.ajouter_main(cartes_recit_epique.pioche());
     }
+
+    public void effet_landes(Joueur j1, Joueur j2){
+        j1.show(j2.getRecitsEpique());
+    }
+
+    public void effet_marais(Joueur j){
+        j.fin_du_tour();
+    }
+
+    public void effet_mine_de_fer(Joueur j, Territoire t){
+        j.removeClan(t);
+        Random rand = new Random();
+        int n = rand.nextInt(j.getAction().size());
+        j.defausse(j.getAction().get(n));
+    }
 }
