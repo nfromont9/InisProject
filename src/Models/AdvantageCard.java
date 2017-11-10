@@ -5,7 +5,7 @@ package Models;
  */
 public class AdvantageCard extends Cards {
 
-    public AdvantageCard(String name, int jouabilitySymbol, Effet effect, boolean visible) {
-        super(name, jouabilitySymbol, effect, visible);
+    public AdvantageCard(String name, int jouabilitySymbol, Effet effect, boolean visible, boolean fourPlayer) {
+        super(name, jouabilitySymbol, effect, visible, fourPlayer);
     }
 }
