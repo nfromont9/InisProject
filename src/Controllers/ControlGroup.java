@@ -1,4 +1,9 @@
-class ControlGroup {
+package Controllers;
+
+import Models.Model;
+import Views.View;
+
+public class ControlGroup {
     ControlGroup(Model model) {
         View view = new View(model);
         new ControlButton(model, view);
