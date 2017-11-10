@@ -8,5 +8,7 @@ public class Cartes {
     //Attributs
     private int symboleDeJouabilite;
     private Effet effet;
+    private boolean visible;
+
 
 }
