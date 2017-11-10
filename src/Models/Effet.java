@@ -8,13 +8,13 @@ public class Effet {
 
     public void Anse(){}
     public void Colline(){}
-    public void Cromlech(){
-        //Placer 1 sanctuaire de la réserve sur le jeu
+    public void Cromlech(Territoire t){
+        t.placer(new Sanctuaire());
     }
     public void Foret(){}
     public void Landes(){}
-    public void Marais(){
-        //Aucune citadelle/Capitale constructible sur ce territoire
+    public void Marais(Territoire t){
+        t.setConstructibilite(False);
     }
     public void Mine_de_fer(){}
     public void Mine_de_sel(){}
@@ -25,9 +25,8 @@ public class Effet {
     }
     public void Plaine(){}
     public void Plateau(){}
-    public void Portes_de_tir_na_nog(){
-        //Placer 1 sanctuaire de la réserve sur le jeu
-        //Chaque fois que
+    public void Portes_de_tir_na_nog(Territoire t){
+        t.placer(new Sanctuaire);
     }
     public void Prairie(){}
     public void Terre_des_brumes(){}
@@ -45,7 +44,25 @@ public class Effet {
     }
 
     public void effet_colline(Joueur j){
-
+        //Lors d'une attaque
+        j.attaque().is_annulee();
     }
 
+    public void effet_cromlech(Joueur j, Territoire t, Carte c){
+        //Après avoir joué un récit épique
+        int nb_clans;
+        for (int i = 0; i < j.getClan().size(); i++) {
+            if (j.getClan().get(i).getPosition()==t) nb_clans++;
+        }
+        if (nb_clans>1){
+            if (recup){
+                j.removeClan(t);
+                j.ajouter_main(c);
+            }
+        }
+    }
+
+    public void effet_foret(Joueur j){
+        j.ajouter_main(cartes_recit_epique.pioche());
+    }
 }
