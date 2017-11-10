@@ -1,20 +1,24 @@
 package Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by fabie_000 on 10/11/2017.
+ */
 public class Cards {
-    public static final int SEASON  =0;
-    public static final int TRISKEL =1;
+    List<Card> cards;
 
-    private int jouabilitySymbol;
-    private Effet effect;
-    private boolean visible;
-    private String name;
-    private boolean fourPlayer;
+    public Cards() {
+        cards = new ArrayList<>();
+        this.createCards();
+    }
 
-    public Cards(String name, int jouabilitySymbol, Effet effect, boolean visible, boolean fourPlayer){
-        this.jouabilitySymbol = jouabilitySymbol;
-        this.effect = effect;
-        this.visible = visible;
-        this.name = name;
-        this.fourPlayer=fourPlayer;
+    private void createCards() {
+        ActionCardName[] actionCards = ActionCardName.values();
+        EpicStoryCardName[] epicStoryCardNames = EpicStoryCardName.values();
+        AdvantageCardNames[] advantageCardNames = AdvantageCardNames.values();
+
+        
     }
 }

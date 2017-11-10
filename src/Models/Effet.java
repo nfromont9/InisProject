@@ -2,7 +2,6 @@ package Models;
 
 import java.util.Random;
 import static java.lang.Boolean.*;
-//TODO modification des nom de la classe Cards
 public class Effet {
 
     //===== Effets Territoires ======//
