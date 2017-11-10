@@ -24,6 +24,7 @@ public class View extends JFrame {
         JPanel panMain = new JPanel();
         panMain.add(panContainer);
 
+
         this.setContentPane(panMain);
         this.setMinimumSize(null);
         this.setPreferredSize(new Dimension(450, 260));
