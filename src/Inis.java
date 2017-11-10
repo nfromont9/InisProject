@@ -1,3 +1,6 @@
+import Controllers.ControlGroup;
+import Models.Model;
+
 public class Inis {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
