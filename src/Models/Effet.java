@@ -44,7 +44,7 @@ public class Effet {
         cartes_ecartees.remove(n);
     }
 
-    public void effet_colline(Joueur j){
+    public void effet_colline(){
 
     }
 
