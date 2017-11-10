@@ -6,10 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-class View extends JFrame {
+public class View extends JFrame {
     private Model model;
 
-    View(Model model) {
+    public View(Model model) {
         this.model = model;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("Inis");
@@ -17,7 +17,7 @@ class View extends JFrame {
                 .getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH)).getImage());
     }
 
-    void display(Boolean b) {
+    public void display(Boolean b) {
         this.setVisible(b);
     }
 
@@ -28,11 +28,11 @@ class View extends JFrame {
         setLocation((int)width, (int)height);
     }
 
-    void setControlButtons(ActionListener al) {
+    public void setControlButtons(ActionListener al) {
 
     }
 
-    void setControlMenu(ActionListener al) {
+    public void setControlMenu(ActionListener al) {
     }
 
 }

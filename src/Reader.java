@@ -1,3 +1,5 @@
+import Models.Model;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
