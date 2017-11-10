@@ -1,14 +1,20 @@
 package Models;
 
 public class Cartes {
-    //Définition des symboles de jouabilités
-    public final int SAISON     =0;
-    public final int TRISKEL    =1;
+    public static final int SAISON  =0;
+    public static final int TRISKEL =1;
 
-    //Attributs
-    private int symboleDeJouabilite;
+    private int symboleJouabilite;
     private Effet effet;
     private boolean visible;
+    private String nom;
+
+    public Cartes(String nom, int symboleJouabilite, Effet effet, boolean visible) {
+        this.symboleJouabilite = symboleJouabilite;
+        this.effet = effet;
+        this.visible = visible;
+        this.nom = nom;
+    }
 
 
 }
