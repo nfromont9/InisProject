@@ -1,0 +1,1 @@
+Ceci est un dossier où mettre les images nécessaires pour les pions
