@@ -1,6 +1,7 @@
 package Models;
 
 import java.util.Random;
+import static java.lang.Boolean.*;
 
 public class Effet {
 
@@ -14,7 +15,7 @@ public class Effet {
     public void Foret(){}
     public void Landes(){}
     public void Marais(Territoire t){
-        t.setConstructibilite(False);
+        t.setConstructibilite(FALSE);
     }
     public void Mine_de_fer(){}
     public void Mine_de_sel(){}
@@ -26,7 +27,7 @@ public class Effet {
     public void Plaine(){}
     public void Plateau(){}
     public void Portes_de_tir_na_nog(Territoire t){
-        t.placer(new Sanctuaire);
+        t.placer(new Sanctuaire());
     }
     public void Prairie(){}
     public void Terre_des_brumes(){}
@@ -48,14 +49,14 @@ public class Effet {
         j.attaque().is_annulee();
     }
 
-    public void effet_cromlech(Joueur j, Territoire t, Carte c){
+    public void effet_cromlech(Joueur j, Territoire t, Carte c,Boolean recup){
         //Après avoir joué un récit épique
-        int nb_clans;
+        int nb_clans=0;
         for (int i = 0; i < j.getClan().size(); i++) {
             if (j.getClan().get(i).getPosition()==t) nb_clans++;
         }
         if (nb_clans>1){
-            if (recup){
+            if (recup==TRUE){
                 j.removeClan(t);
                 j.ajouter_main(c);
             }
