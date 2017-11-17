@@ -25,13 +25,13 @@ public class Cards {
             if (nom.equals("Emissaires") || nom.equals("Espions et Eclaireurs") || nom.equals("Maître artisan") || nom.equals("Razzia")){
                 fourPlayer=true;
             }
-            cards.add(new Card(actionCards[i].getName(), Card.ACTION_CARD ,actionCards[i].getCode(), 0, false, fourPlayer));
+            cards.add(new Card(nom, Card.ACTION_CARD ,actionCards[i].getCode(), 0, false, fourPlayer));
         }
         for (int i = 0; i < epicStoryCardNames.length; i++) {
-
+            cards.add(new Card(epicStoryCardNames[i].getName(), Card.EPIC_STORY_CARD ,epicStoryCardNames[i].getCode(), 0, false, false));
         }
         for (int i = 0; i < advantageCardNames.length; i++) {
-
+            cards.add(new Card(advantageCardNames[i].getName(), Card.ADVANTAGE_CARD ,advantageCardNames[i].getCode(), 0, false, false));
         }
     }
 
