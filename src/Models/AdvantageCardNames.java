@@ -5,7 +5,7 @@ package Models;
  */
 public enum AdvantageCardNames {
     Anse ("Anse"),
-    Coline ("Collines"),
+    Colline ("Collines"),
     Cromlech("Cromlech"),
     Forêt("Forêt"),
     Lande("Lande"),
