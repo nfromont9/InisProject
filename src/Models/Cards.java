@@ -22,7 +22,7 @@ public class Cards {
         for (int i = 0; i < actionCards.length; i++) {
             String nom = actionCards[i].getName();
             boolean fourPlayer = false;
-            if (nom.equals("Emissaires") || nom.equals("Espion et Eclaireurs") || nom.equals("Maitre Artisan") || nom.equals("Razzia")){
+            if (nom.equals("Emissaires") || nom.equals("Espions et Eclaireurs") || nom.equals("Maître Artisan") || nom.equals("Razzia")){
                 fourPlayer=true;
             }
             cards.add(new Card(actionCards[i].getName(), Card.ACTION_CARD ,actionCards[i].getCode(), 0, false, fourPlayer));
