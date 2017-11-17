@@ -3,7 +3,6 @@ package Models;
 import java.util.ArrayList;
 import java.util.Random;
 import static java.lang.Boolean.*;
-
 public class Effet {
 
     public Random rand = new Random();
