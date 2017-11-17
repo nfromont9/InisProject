@@ -4,31 +4,40 @@ package Models;
  * Created by fabie_000 on 10/11/2017.
  */
 public enum ActionCardName {
-    ArtisansEtPaysans("Artisans et paysans"),
-    Barde("Barde"),
-    ChefDeGuerre("Chef de Guerre"),
-    Citadelle("Citadelle"),
-    Conquete("Conquête"),
-    Druide("Druide"),
-    Exploration("Exploration"),
-    Festivites("Festivités"),
-    Geis("Geis"),
-    Migration("Migration"),
-    NouveauxClancs("Nouveaux Clans"),
-    NouvelleAlliance("Nouvelle Alliance"),
-    Sanctuaire("Sanctuaire"),
-    Emmissaires("Emissaires"),
-    EspionsEtEclaireurs("Espions et Eclaireurs"),
-    MaitreArtisan("Maître artisan"),
-    Razzia("Razzia");
+    ArtisansEtPaysans("Artisans et paysans", ActionCardName.SEASON),
+    Barde("Barde", ActionCardName.DOUBLE),
+    ChefDeGuerre("Chef de Guerre", ActionCardName.DOUBLE),
+    Citadelle("Citadelle", ActionCardName.SEASON),
+    Conquete("Conquête", ActionCardName.SEASON),
+    Druide("Druide", ActionCardName.SEASON),
+    Exploration("Exploration", ActionCardName.SEASON),
+    Festivites("Festivités", ActionCardName.SEASON),
+    Geis("Geis", ActionCardName.TRISKEL),
+    Migration("Migration", ActionCardName.SEASON),
+    NouveauxClancs("Nouveaux Clans", ActionCardName.SEASON),
+    NouvelleAlliance("Nouvelle Alliance", ActionCardName.SEASON),
+    Sanctuaire("Sanctuaire", ActionCardName.SEASON),
+    Emmissaires("Emissaires", ActionCardName.SEASON),
+    EspionsEtEclaireurs("Espions et Eclaireurs", ActionCardName.SEASON),
+    MaitreArtisan("Maître artisan", ActionCardName.DOUBLE),
+    Razzia("Razzia", ActionCardName.TRISKEL);
+
+    public static final int TRISKEL = 0;
+    public static final int SEASON = 1;
+    public static final int DOUBLE = 2;
 
     private final String name;
+    private final int code;
 
-    ActionCardName(String name) {
-        this.name=name;
+    ActionCardName(String name, int code) {
+        this.name=name; this.code=code;
     }
 
     public String getName(){
         return name;
+    }
+
+    public int getCode(){
+        return code;
     }
 }
