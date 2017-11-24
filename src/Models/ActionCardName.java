@@ -1,8 +1,5 @@
 package Models;
 
-/**
- * Created by fabie_000 on 10/11/2017.
- */
 public enum ActionCardName {
     ArtisansEtPaysans("Artisans et paysans", ActionCardName.SEASON),
     Barde("Barde", ActionCardName.DOUBLE),
