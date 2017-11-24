@@ -111,6 +111,10 @@ public class Lobby extends JFrame {
         this.setContentPane(panContainer);
     }
 
+    private JPanel createPanPlayerNames(int nbPlayers) {
+        return new JPanel();
+    }
+
     public void display(Boolean b) {
         this.setVisible(b);
     }
