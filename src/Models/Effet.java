@@ -85,7 +85,8 @@ public enum Effet {
 //            }
 //        }
 //    }
-    tPrairie {
+    tPrairie {++666
+
         @Override
         public void effect() {
         }
