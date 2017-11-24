@@ -26,7 +26,6 @@ class ImagePanel extends JPanel {
 
     public void setImageSize(int width, int height){
         resizeImage(width/2, height/2);
-        //this.setPreferredSize(new Dimension((int)width/2, (int)height/2));
     }
 
     @Override

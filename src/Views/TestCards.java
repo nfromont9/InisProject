@@ -33,7 +33,7 @@ public class TestCards extends JFrame {
         tasESC.setImageSize(350, 480);
         tasESC.setBounds((350/2+20),10,350,480);
         tasAdC.setImageSize(350,480);
-        tasAdC.setBounds((350+30),10,350,480);
+        tasAdC.setBounds((350+30),10,350,480);//
         panel.add(tasAC);
         panel.add(tasESC);
         panel.add(tasAdC);
