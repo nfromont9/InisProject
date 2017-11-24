@@ -18,6 +18,16 @@ public class ControlButtonLobby implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Action performed sur un bouton du lobby");
+        if (e.getSource()==lobby.getButPartieDecouverte()) actionButPartieDecouverte();
+        if (e.getSource()==lobby.getButPartieNormale()) actionButPartieNormale();
     }
+
+    private void actionButPartieDecouverte() {
+        System.out.println("Nouvelle partie découverte");
+    }
+
+    private void actionButPartieNormale() {
+        System.out.println("Nouvelle partie Normale");
+    }
+
 }

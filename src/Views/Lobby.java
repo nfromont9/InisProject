@@ -17,8 +17,8 @@ public class Lobby extends JFrame {
         this.model = model;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("Inis");
-        this.setIconImage(new ImageIcon(new ImageIcon("images/icons/game_icon.png")
-                .getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH)).getImage());
+        this.setIconImage(new ImageIcon(new ImageIcon("images/app/icone.png")
+                .getImage().getScaledInstance(256, 256, Image.SCALE_SMOOTH)).getImage());
         initComponents();
         createMenu();
         create();
@@ -123,5 +123,29 @@ public class Lobby extends JFrame {
         jmiOptions.addActionListener(al);
         jmiNewGame.addActionListener(al);
         jmiHelp.addActionListener(al);
+    }
+
+    public JButton getButPartieNormale() {
+        return butPartieNormale;
+    }
+
+    public JButton getButPartieDecouverte() {
+        return butPartieDecouverte;
+    }
+
+    public JMenuItem getJmiNewGame() {
+        return jmiNewGame;
+    }
+
+    public JMenuItem getJmiOptions() {
+        return jmiOptions;
+    }
+
+    public JMenuItem getJmiHelp() {
+        return jmiHelp;
+    }
+
+    public JMenuItem getJmiLoadGame() {
+        return jmiLoadGame;
     }
 }
