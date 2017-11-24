@@ -11,6 +11,7 @@ public class Lobby extends JFrame {
     private final int WIDTH=720, HEIGHT=540;
 
     private JButton butPartieNormale, butPartieDecouverte;
+    JMenuItem jmiNewGame, jmiOptions, jmiHelp, jmiLoadGame;
 
     public Lobby(Model model) {
         this.model = model;
@@ -19,6 +20,7 @@ public class Lobby extends JFrame {
         this.setIconImage(new ImageIcon(new ImageIcon("images/icons/game_icon.png")
                 .getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH)).getImage());
         initComponents();
+        createMenu();
         create();
         adjust();
         center();
@@ -36,6 +38,29 @@ public class Lobby extends JFrame {
         butPartieDecouverte.setPreferredSize(new Dimension(BUT_WIDTH, BUT_HEIGHT));
         butPartieDecouverte.setIcon(new ImageIcon(new ImageIcon("images/app/partie-decouverte.png")
                 .getImage().getScaledInstance(BUT_WIDTH, BUT_HEIGHT, Image.SCALE_SMOOTH)));
+
+        jmiNewGame = new JMenuItem("Nouvelle partie");
+        jmiLoadGame = new JMenuItem("Charger une partie");
+        jmiOptions = new JMenuItem("Options");
+        jmiHelp = new JMenuItem("Aide");
+    }
+
+    private void createMenu() {
+        JMenuBar menubar = new JMenuBar();
+
+        JMenu menuGame = new JMenu("Partie");
+        JMenu menuParameters = new JMenu("Paramètres");
+
+        menuGame.add(jmiNewGame);
+        menuGame.add(jmiLoadGame);
+
+        menuParameters.add(jmiOptions);
+        menuParameters.add(jmiHelp);
+
+        menubar.add(menuGame);
+        menubar.add(menuParameters);
+
+        this.setJMenuBar(menubar);
     }
 
     private void create() {
@@ -46,8 +71,10 @@ public class Lobby extends JFrame {
         background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
 
+        background.add(Box.createVerticalStrut(300));
         JPanel panButtons = new JPanel();
         panButtons.add(butPartieDecouverte);
+        panButtons.add(Box.createHorizontalStrut(20));
         panButtons.add(butPartieNormale);
         panButtons.setOpaque(false);
 
@@ -57,7 +84,7 @@ public class Lobby extends JFrame {
 
         panMain.add(panContainer);
 
-        this.setContentPane(panMain);
+        this.setContentPane(panContainer);
     }
 
     public void display(Boolean b) {
