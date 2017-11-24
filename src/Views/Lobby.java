@@ -64,14 +64,19 @@ public class Lobby extends JFrame {
     }
 
     private void create() {
-        JPanel panContainer = new JPanel(), panMain = new JPanel();
+        JPanel panContainer = new JPanel()/*, panMain = new JPanel()*/;
 
         ImagePanel background = new ImagePanel("images/app/lobby-background.png");
         background.resizeImage(WIDTH, HEIGHT);
         background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
 
-        background.add(Box.createVerticalStrut(300));
+        ImagePanel title = new ImagePanel("images/app/inis-title.png");
+        title.resizeImage(100, 50);
+        title.setPreferredSize(new Dimension(100, 50));
+
+        background.add(title);
+        background.add(Box.createVerticalStrut(150));
         JPanel panButtons = new JPanel();
         panButtons.add(butPartieDecouverte);
         panButtons.add(Box.createHorizontalStrut(20));
@@ -82,7 +87,7 @@ public class Lobby extends JFrame {
 
         panContainer.add(background);
 
-        panMain.add(panContainer);
+        // panMain.add(panContainer);
 
         this.setContentPane(panContainer);
     }
