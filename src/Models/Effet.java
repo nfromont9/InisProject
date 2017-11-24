@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import static java.lang.Boolean.*;
 public enum Effet {
-
+/*
     //===== Effets Territoires ======//
     tAnse {
         @Override
@@ -261,5 +261,5 @@ public enum Effet {
     public void effect(Territoire t, Territoire t2){}
     public void effect(Joueur j, Joueur j2){}
     public void effect(Joueur j, Territoire t, Carte c, Boolean recup) {}
-    public void effect(Joueur j, Territoire t1, Territoire t2, int n) {}
+    public void effect(Joueur j, Territoire t1, Territoire t2, int n) {}*/
 }

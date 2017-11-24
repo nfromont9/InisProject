@@ -1,0 +1,1 @@
+Ceci est un dossier où mettre les images nécessaires pour l'appli de manière générale

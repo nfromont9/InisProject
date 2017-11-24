@@ -20,6 +20,10 @@ class ImagePanel extends JPanel {
         selectImage(imagepath);
     }
 
+    public void resizeImage(int width, int height) {
+        this.image = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         g.drawImage(image, 0, 0, null);

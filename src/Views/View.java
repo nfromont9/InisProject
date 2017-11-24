@@ -15,6 +15,7 @@ public class View extends JFrame {
         this.setTitle("Inis");
         this.setIconImage(new ImageIcon(new ImageIcon("images/icons/game_icon.png")
                 .getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH)).getImage());
+        create();
     }
 
     private void create() {
