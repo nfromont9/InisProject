@@ -83,6 +83,7 @@ public class Lobby extends JFrame {
         JPanel panButtons = new JPanel();
         panButtons.add(butPartieDecouverte);
         panButtons.add(Box.createHorizontalStrut(20));
+
         panButtons.add(butPartieNormale);
         panButtons.setOpaque(false);
 
