@@ -23,11 +23,15 @@ public class ControlButtonLobby implements ActionListener {
     }
 
     private void actionButPartieDecouverte() {
+        model.setTypePartie(Model.TYPE_PARTIE.DECOUVERTE);
         System.out.println("Nouvelle partie découverte");
+        lobby.switchViews();
     }
 
     private void actionButPartieNormale() {
+        model.setTypePartie(Model.TYPE_PARTIE.NORMALE);
         System.out.println("Nouvelle partie Normale");
+        lobby.switchViews();
     }
 
 }

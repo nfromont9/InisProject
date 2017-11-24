@@ -27,7 +27,7 @@ public enum Effet {
         }
     },
     tForêt {
-        @Override
+        @Override*
         public void effect() {
         }
     },
@@ -85,7 +85,7 @@ public enum Effet {
 //            }
 //        }
 //    }
-    tPrairie {++666
+    tPrairie {
 
         @Override
         public void effect() {
