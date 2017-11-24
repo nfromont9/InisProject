@@ -24,6 +24,10 @@ class ImagePanel extends JPanel {
         this.image = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
     }
 
+    public void setImageSize(int width, int height){
+        this.setPreferredSize(new Dimension(width, height));
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         g.drawImage(image, 0, 0, null);
