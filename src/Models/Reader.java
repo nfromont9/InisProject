@@ -1,8 +1,6 @@
-import Models.Model;
+package Models;
 
-import java.awt.*;
 import java.io.*;
-import java.util.*;
 
 class Reader {
     private static Model model;

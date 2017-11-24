@@ -20,6 +20,25 @@ public class ControlMenuLobby implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Action performed sur le menu");
+        if (e.getSource()==lobby.getJmiHelp()) actionJmiHelp();
+        if (e.getSource()==lobby.getJmiLoadGame()) actionJmiLoadGame();
+        if (e.getSource()==lobby.getJmiNewGame()) actionJmiNewGame();
+        if (e.getSource()==lobby.getJmiOptions()) actionJmiOptions();
+    }
+
+    private void actionJmiOptions() {
+        System.out.println("Options");
+    }
+
+    private void actionJmiHelp() {
+        System.out.println("Aide");
+    }
+
+    private void actionJmiLoadGame() {
+        System.out.println("Charger une partie");
+    }
+
+    private void actionJmiNewGame() {
+        System.out.println("Nouvelle partie");
     }
 }

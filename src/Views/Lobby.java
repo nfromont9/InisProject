@@ -17,8 +17,8 @@ public class Lobby extends JFrame {
         this.model = model;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("Inis");
-        this.setIconImage(new ImageIcon(new ImageIcon("images/icons/game_icon.png")
-                .getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH)).getImage());
+        this.setIconImage(new ImageIcon(new ImageIcon("images/app/icone.png")
+                .getImage().getScaledInstance(256, 256, Image.SCALE_SMOOTH)).getImage());
         initComponents();
         createMenu();
         create();
@@ -71,15 +71,19 @@ public class Lobby extends JFrame {
         background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
 
+        JPanel panTitle = new JPanel();
         ImagePanel title = new ImagePanel("images/app/inis-title.png");
-        title.resizeImage(100, 50);
-        title.setPreferredSize(new Dimension(100, 50));
+        title.resizeImage(200, 100);
+        title.setPreferredSize(new Dimension(200, 100));
+        panTitle.add(title);
+        panTitle.setOpaque(false);
 
-        background.add(title);
-        background.add(Box.createVerticalStrut(150));
+        background.add(panTitle);
+        background.add(Box.createVerticalStrut(120));
         JPanel panButtons = new JPanel();
         panButtons.add(butPartieDecouverte);
         panButtons.add(Box.createHorizontalStrut(20));
+
         panButtons.add(butPartieNormale);
         panButtons.setOpaque(false);
 
@@ -115,6 +119,33 @@ public class Lobby extends JFrame {
     }
 
     public void setControlMenu(ActionListener al) {
+        jmiLoadGame.addActionListener(al);
+        jmiOptions.addActionListener(al);
+        jmiNewGame.addActionListener(al);
+        jmiHelp.addActionListener(al);
+    }
 
+    public JButton getButPartieNormale() {
+        return butPartieNormale;
+    }
+
+    public JButton getButPartieDecouverte() {
+        return butPartieDecouverte;
+    }
+
+    public JMenuItem getJmiNewGame() {
+        return jmiNewGame;
+    }
+
+    public JMenuItem getJmiOptions() {
+        return jmiOptions;
+    }
+
+    public JMenuItem getJmiHelp() {
+        return jmiHelp;
+    }
+
+    public JMenuItem getJmiLoadGame() {
+        return jmiLoadGame;
     }
 }
