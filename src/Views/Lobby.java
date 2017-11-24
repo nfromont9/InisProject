@@ -15,15 +15,11 @@ public class Lobby extends JFrame {
 
     public Lobby(Model model) {
         this.model = model;
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setTitle("Inis");
-        this.setIconImage(new ImageIcon(new ImageIcon("images/app/icone.png")
-                .getImage().getScaledInstance(256, 256, Image.SCALE_SMOOTH)).getImage());
+
         initComponents();
-        createMenu();
-        create();
+        createMenuAccueil();
+        createViewAccueil();
         adjust();
-        center();
     }
 
     private void initComponents() {
@@ -45,7 +41,7 @@ public class Lobby extends JFrame {
         jmiHelp = new JMenuItem("Aide");
     }
 
-    private void createMenu() {
+    private void createMenuAccueil() {
         JMenuBar menubar = new JMenuBar();
 
         JMenu menuGame = new JMenu("Partie");
@@ -63,10 +59,10 @@ public class Lobby extends JFrame {
         this.setJMenuBar(menubar);
     }
 
-    private void create() {
-        JPanel panContainer = new JPanel()/*, panMain = new JPanel()*/;
+    private void createViewAccueil() {
+        JPanel panContainer = new JPanel();
 
-        ImagePanel background = new ImagePanel("images/app/lobby-background.png");
+        ImagePanel background = new ImagePanel("images/app/accueil-background.png");
         background.resizeImage(WIDTH, HEIGHT);
         background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
@@ -91,7 +87,26 @@ public class Lobby extends JFrame {
 
         panContainer.add(background);
 
-        // panMain.add(panContainer);
+        this.setContentPane(panContainer);
+    }
+
+    public void switchViews() {
+        display(false);
+
+        createViewLobby();
+
+        display(true);
+    }
+
+    private void createViewLobby() {
+        JPanel panContainer = new JPanel();
+
+        ImagePanel background = new ImagePanel("images/app/lobby-background.png");
+        background.resizeImage(WIDTH, HEIGHT);
+        background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
+
+        panContainer.add(background);
 
         this.setContentPane(panContainer);
     }
@@ -100,17 +115,24 @@ public class Lobby extends JFrame {
         this.setVisible(b);
     }
 
-    private void center() {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth()/2-this.getWidth()/2;
-        double height = screenSize.getHeight()/2-this.getHeight()/2;
-        setLocation((int)width, (int)height);
-    }
-
     private void adjust() {
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setTitle("Inis");
+        this.setIconImage(new ImageIcon(new ImageIcon("images/app/icone.png")
+                .getImage().getScaledInstance(256, 256, Image.SCALE_SMOOTH)).getImage());
+
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         this.pack();
         this.setResizable(false);
+        center();
+    }
+
+    private void center() {
+        this.setLocationRelativeTo(null);
+        /*Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth()/2-this.getWidth()/2;
+        double height = screenSize.getHeight()/2-this.getHeight()/2;
+        setLocation((int)width, (int)height);*/
     }
 
     public void setControlButtons(ActionListener al) {
