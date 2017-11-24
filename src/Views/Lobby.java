@@ -71,12 +71,15 @@ public class Lobby extends JFrame {
         background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
 
+        JPanel panTitle = new JPanel();
         ImagePanel title = new ImagePanel("images/app/inis-title.png");
-        title.resizeImage(100, 50);
-        title.setPreferredSize(new Dimension(100, 50));
+        title.resizeImage(200, 100);
+        title.setPreferredSize(new Dimension(200, 100));
+        panTitle.add(title);
+        panTitle.setOpaque(false);
 
-        background.add(title);
-        background.add(Box.createVerticalStrut(150));
+        background.add(panTitle);
+        background.add(Box.createVerticalStrut(120));
         JPanel panButtons = new JPanel();
         panButtons.add(butPartieDecouverte);
         panButtons.add(Box.createHorizontalStrut(20));
@@ -115,6 +118,9 @@ public class Lobby extends JFrame {
     }
 
     public void setControlMenu(ActionListener al) {
-
+        jmiLoadGame.addActionListener(al);
+        jmiOptions.addActionListener(al);
+        jmiNewGame.addActionListener(al);
+        jmiHelp.addActionListener(al);
     }
 }
