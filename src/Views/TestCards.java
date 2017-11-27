@@ -29,11 +29,11 @@ public class TestCards extends JFrame {
         ImagePanel tasESC = new ImagePanel("images/cards/EpicStoryCardv1.png");
         ImagePanel tasAdC = new ImagePanel("images/cards/advantageCardv1.png");
         tasAC.setImageSize(350, 480);
-        tasAC.setBounds(10,10,350,480);
+        tasAC.setBounds(10,10,350/2,480/2);
         tasESC.setImageSize(350, 480);
-        tasESC.setBounds(370,10,350,480);
+        tasESC.setBounds((350/2+20),10,350,480);
         tasAdC.setImageSize(350,480);
-        tasAdC.setBounds(730,10,350,480);
+        tasAdC.setBounds((350+30),10,350,480);//
         panel.add(tasAC);
         panel.add(tasESC);
         panel.add(tasAdC);
