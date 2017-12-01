@@ -20,6 +20,14 @@ public class ControlButtonLobby implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==lobby.getButPartieDecouverte()) actionButPartieDecouverte();
         if (e.getSource()==lobby.getButPartieNormale()) actionButPartieNormale();
+        if (e.getSource()==lobby.getJcbNbJoueurs()) actionJcbNbJoueurs();
+    }
+
+    private void actionJcbNbJoueurs() {
+        int i = lobby.getJcbNbJoueurs().getSelectedIndex()+2;
+        System.out.println(i);
+        model.setNbJoueurs(i);
+        lobby.reloadPanPlayerNames();
     }
 
     private void actionButPartieDecouverte() {

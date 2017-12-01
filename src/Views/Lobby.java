@@ -10,8 +10,13 @@ public class Lobby extends JFrame {
     private Model model;
     private final int WIDTH=720, HEIGHT=540;
 
-    private JButton butPartieNormale, butPartieDecouverte;
-    JMenuItem jmiNewGame, jmiOptions, jmiHelp, jmiLoadGame;
+    private JButton butPartieNormale, butPartieDecouverte, butStartGame;
+    private JMenuItem jmiNewGame, jmiOptions, jmiHelp, jmiLoadGame;
+    private JFormattedTextField[] tabTF = new JFormattedTextField[4];
+    private JComboBox jcbNbJoueurs;
+
+    private JPanel panPlayerNames;
+    private ImagePanel background;
 
     public Lobby(Model model) {
         this.model = model;
@@ -35,10 +40,18 @@ public class Lobby extends JFrame {
         butPartieDecouverte.setIcon(new ImageIcon(new ImageIcon("images/app/partie-decouverte.png")
                 .getImage().getScaledInstance(BUT_WIDTH, BUT_HEIGHT, Image.SCALE_SMOOTH)));
 
+        butStartGame = new JButton("");
+        butStartGame.setPreferredSize(new Dimension(BUT_WIDTH/2, BUT_HEIGHT/2));
+        butStartGame.setIcon(new ImageIcon(new ImageIcon("images/app/start-game.png")
+                .getImage().getScaledInstance(BUT_WIDTH/2, BUT_HEIGHT/2, Image.SCALE_SMOOTH)));
+
         jmiNewGame = new JMenuItem("Nouvelle partie");
         jmiLoadGame = new JMenuItem("Charger une partie");
         jmiOptions = new JMenuItem("Options");
         jmiHelp = new JMenuItem("Aide");
+        panPlayerNames = createPanPlayerNames(2);
+        jcbNbJoueurs = new JComboBox(model.jcbNbJoueursStrings);
+        background = new ImagePanel("images/app/lobby-background.png");
     }
 
     private void createMenuAccueil() {
@@ -78,9 +91,8 @@ public class Lobby extends JFrame {
         background.add(Box.createVerticalStrut(120));
         JPanel panButtons = new JPanel();
         panButtons.add(butPartieDecouverte);
-        panButtons.add(Box.createHorizontalStrut(20));
-
-        panButtons.add(butPartieNormale);
+        /*panButtons.add(Box.createHorizontalStrut(20));
+        panButtons.add(butPartieNormale);*/
         panButtons.setOpaque(false);
 
         background.add(panButtons);
@@ -100,19 +112,58 @@ public class Lobby extends JFrame {
 
     private void createViewLobby() {
         JPanel panContainer = new JPanel();
-
-        ImagePanel background = new ImagePanel("images/app/lobby-background.png");
-        background.resizeImage(WIDTH, HEIGHT);
-        background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
-
+        createLobbyBG();
         panContainer.add(background);
-
         this.setContentPane(panContainer);
     }
 
+    private void createLobbyBG() {
+        background.resizeImage(WIDTH, HEIGHT);
+        background.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
+        JPanel panChoixNbJoueurs = new JPanel();
+        JLabel labNbJoueurs = new JLabel("<html><font color='red'>Nombre de joueurs : </font></html>");
+        panChoixNbJoueurs.add(labNbJoueurs);
+        panChoixNbJoueurs.add(jcbNbJoueurs);
+        panChoixNbJoueurs.setMaximumSize(new Dimension(300, 35));
+        panChoixNbJoueurs.setOpaque(false);
+        background.add(Box.createVerticalStrut(40));
+        background.add(butStartGame);
+        background.add(Box.createVerticalStrut(40));
+        background.add(panChoixNbJoueurs);
+        background.add(Box.createVerticalStrut(20));
+        background.add(panPlayerNames);
+
+        background.updateUI();
+    }
+
     private JPanel createPanPlayerNames(int nbPlayers) {
-        return new JPanel();
+        JPanel panGeneral = new JPanel();
+        panGeneral.setLayout(new BoxLayout(panGeneral, BoxLayout.Y_AXIS));
+        JPanel tabPanels[] = new JPanel[nbPlayers];
+
+        for (int i=0; i<nbPlayers; i++) {
+            JLabel lab = new JLabel("<html><font color='red'>Joueur "+(i+1)+" :</font></html>");
+            tabPanels[i] = new JPanel();
+            tabPanels[i].setOpaque(false);
+            tabPanels[i].add(lab);
+            tabPanels[i].setMaximumSize(new Dimension(300, 50));
+            tabTF[i] = new JFormattedTextField();
+            tabTF[i].setMaximumSize(new Dimension(150, 20));
+            tabTF[i].setPreferredSize(new Dimension(150, 20));
+            tabPanels[i].add(tabTF[i]);
+
+            panGeneral.add(tabPanels[i]);
+        }
+
+        panGeneral.setOpaque(false);
+        return panGeneral;
+    }
+
+    public void reloadPanPlayerNames() {
+        panPlayerNames = createPanPlayerNames(model.getNbJoueurs());
+        background.removeAll();
+        createLobbyBG();
     }
 
     public void display(Boolean b) {
@@ -142,6 +193,7 @@ public class Lobby extends JFrame {
     public void setControlButtons(ActionListener al) {
         butPartieNormale.addActionListener(al);
         butPartieDecouverte.addActionListener(al);
+        jcbNbJoueurs.addActionListener(al);
     }
 
     public void setControlMenu(ActionListener al) {
@@ -173,5 +225,9 @@ public class Lobby extends JFrame {
 
     public JMenuItem getJmiLoadGame() {
         return jmiLoadGame;
+    }
+
+    public JComboBox getJcbNbJoueurs() {
+        return jcbNbJoueurs;
     }
 }
