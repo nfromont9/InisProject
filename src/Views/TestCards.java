@@ -16,7 +16,7 @@ public class TestCards extends JFrame {
     public TestCards(Cards test) {
         this.cards = test;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(1920, 1080);
+        setSize(1000, 1000);
         this.setTitle("Inis");
         this.setIconImage(new ImageIcon(new ImageIcon("images/icons/game_icon.png")
                 .getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH)).getImage());
@@ -25,18 +25,21 @@ public class TestCards extends JFrame {
 
     public void create() {
         JLayeredPane panel = new JLayeredPane();
-        ImagePanel tasAC = new ImagePanel("images/cards/actionCardv1.png");
-        ImagePanel tasESC = new ImagePanel("images/cards/EpicStoryCardv1.png");
-        ImagePanel tasAdC = new ImagePanel("images/cards/advantageCardv1.png");
-        tasAC.setImageSize(350, 480);
-        tasAC.setBounds(10,10,350/2,480/2);
-        tasESC.setImageSize(350, 480);
-        tasESC.setBounds((350/2+20),10,350,480);
-        tasAdC.setImageSize(350,480);
-        tasAdC.setBounds((350+30),10,350,480);//
-        panel.add(tasAC);
-        panel.add(tasESC);
-        panel.add(tasAdC);
+        ImagePanel carte = new ImagePanel("images/cards/backgroundActionCardv1.png");
+        ImagePanel symbole = new ImagePanel("images/cards/symbolSeason.png");
+        ImagePanel image = new ImagePanel("images/cards/background_castle.png");
+
+        carte.setImageSize(350*2, 522*2);
+        carte.setBounds(10,10,350*2,522*2);
+        symbole.setImageSize(127,127);
+        symbole.setBounds(18,15,127,127);
+        image.setImageSize(350*2,522*2);
+        image.setBounds(10,10,350*2,522*2);
+
+        panel.add(new JLabel("Château"));
+        panel.add(symbole);
+        panel.add(carte);
+        panel.add(image);
         setContentPane(panel);
     }
 
