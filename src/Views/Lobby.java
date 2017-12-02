@@ -45,6 +45,10 @@ public class Lobby extends JFrame {
         butStartGame.setIcon(new ImageIcon(new ImageIcon("images/app/start-game.png")
                 .getImage().getScaledInstance(BUT_WIDTH/2, BUT_HEIGHT/2, Image.SCALE_SMOOTH)));
 
+        butPartieDecouverte.setBorder(BorderFactory.createEmptyBorder());
+        butPartieNormale.setBorder(BorderFactory.createEmptyBorder());
+        butStartGame.setBorder(BorderFactory.createEmptyBorder());
+
         jmiNewGame = new JMenuItem("Nouvelle partie");
         jmiLoadGame = new JMenuItem("Charger une partie");
         jmiOptions = new JMenuItem("Options");
