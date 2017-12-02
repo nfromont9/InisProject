@@ -21,6 +21,13 @@ public class ControlButtonLobby implements ActionListener {
         if (e.getSource()==lobby.getButPartieDecouverte()) actionButPartieDecouverte();
         if (e.getSource()==lobby.getButPartieNormale()) actionButPartieNormale();
         if (e.getSource()==lobby.getJcbNbJoueurs()) actionJcbNbJoueurs();
+        if (e.getSource()==lobby.getButStartGame()) actionStartGame();
+    }
+
+    private void actionStartGame() {
+        System.out.println("démarage de la partie");
+        String[] playerNames = new String[4];
+
     }
 
     private void actionJcbNbJoueurs() {

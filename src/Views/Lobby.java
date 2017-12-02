@@ -3,6 +3,7 @@ package Views;
 import Models.Model;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
@@ -215,6 +216,10 @@ public class Lobby extends JFrame {
         return butPartieDecouverte;
     }
 
+    public JButton getButStartGame() {
+        return butStartGame;
+    }
+
     public JMenuItem getJmiNewGame() {
         return jmiNewGame;
     }
@@ -231,7 +236,15 @@ public class Lobby extends JFrame {
         return jmiLoadGame;
     }
 
+    public JFormattedTextField[] getTabTF() {
+        return tabTF;
+    }
+
     public JComboBox getJcbNbJoueurs() {
         return jcbNbJoueurs;
+    }
+
+    public JPanel getPanPlayerNames() {
+        return panPlayerNames;
     }
 }
