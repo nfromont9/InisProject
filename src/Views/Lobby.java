@@ -51,6 +51,10 @@ public class Lobby extends JFrame {
         butStartGame.setBorder(BorderFactory.createEmptyBorder());
         butStartGame.setContentAreaFilled(false);
 
+        butPartieDecouverte.setBorder(BorderFactory.createEmptyBorder());
+        butPartieNormale.setBorder(BorderFactory.createEmptyBorder());
+        butStartGame.setBorder(BorderFactory.createEmptyBorder());
+
         jmiNewGame = new JMenuItem("Nouvelle partie");
         jmiLoadGame = new JMenuItem("Charger une partie");
         jmiOptions = new JMenuItem("Options");
