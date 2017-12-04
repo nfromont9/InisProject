@@ -3,7 +3,6 @@ package Views;
 import Models.Model;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
@@ -35,16 +34,22 @@ public class Lobby extends JFrame {
         butPartieNormale.setPreferredSize(new Dimension(BUT_WIDTH, BUT_HEIGHT));
         butPartieNormale.setIcon(new ImageIcon(new ImageIcon("images/app/partie-normale.png")
                 .getImage().getScaledInstance(BUT_WIDTH, BUT_HEIGHT, Image.SCALE_SMOOTH)));
+        butPartieNormale.setBorder(BorderFactory.createEmptyBorder());
+        butPartieNormale.setContentAreaFilled(false);
 
         butPartieDecouverte = new JButton("");
         butPartieDecouverte.setPreferredSize(new Dimension(BUT_WIDTH, BUT_HEIGHT));
         butPartieDecouverte.setIcon(new ImageIcon(new ImageIcon("images/app/partie-decouverte.png")
                 .getImage().getScaledInstance(BUT_WIDTH, BUT_HEIGHT, Image.SCALE_SMOOTH)));
+        butPartieDecouverte.setBorder(BorderFactory.createEmptyBorder());
+        butPartieDecouverte.setContentAreaFilled(false);
 
         butStartGame = new JButton("");
         butStartGame.setPreferredSize(new Dimension(BUT_WIDTH/2, BUT_HEIGHT/2));
         butStartGame.setIcon(new ImageIcon(new ImageIcon("images/app/start-game.png")
                 .getImage().getScaledInstance(BUT_WIDTH/2, BUT_HEIGHT/2, Image.SCALE_SMOOTH)));
+        butStartGame.setBorder(BorderFactory.createEmptyBorder());
+        butStartGame.setContentAreaFilled(false);
 
         jmiNewGame = new JMenuItem("Nouvelle partie");
         jmiLoadGame = new JMenuItem("Charger une partie");
@@ -194,6 +199,7 @@ public class Lobby extends JFrame {
     public void setControlButtons(ActionListener al) {
         butPartieNormale.addActionListener(al);
         butPartieDecouverte.addActionListener(al);
+        butStartGame.addActionListener(al);
         jcbNbJoueurs.addActionListener(al);
     }
 

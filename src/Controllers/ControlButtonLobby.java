@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.Joueur;
 import Models.Model;
 import Views.Lobby;
 
@@ -25,14 +26,16 @@ public class ControlButtonLobby implements ActionListener {
     }
 
     private void actionStartGame() {
-        System.out.println("démarage de la partie");
-        String[] playerNames = new String[4];
-
+        System.out.println("démarrage de la partie");
+        model.setNbJoueurs(lobby.getJcbNbJoueurs().getSelectedIndex()+2);
+        for (int i=0; i<model.getNbJoueurs(); i++) {
+            String str = lobby.getTabTF()[i].getText();
+            model.getJoueurs()[i] = new Joueur(str);
+        }
     }
 
     private void actionJcbNbJoueurs() {
         int i = lobby.getJcbNbJoueurs().getSelectedIndex()+2;
-        System.out.println(i);
         model.setNbJoueurs(i);
         lobby.reloadPanPlayerNames();
     }
