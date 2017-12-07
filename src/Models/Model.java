@@ -8,6 +8,7 @@ public class Model {
 
     private TYPE_PARTIE typePartie;
     private int nbJoueurs;
+
     public Model() {
 
     }
@@ -16,10 +17,10 @@ public class Model {
         return typePartie;
     }
 
-
     public void setTypePartie(TYPE_PARTIE typePartie) {
         this.typePartie = typePartie;
     }
+
     public void setNbJoueurs(int nbJoueurs) {
         this.nbJoueurs = nbJoueurs;
     }

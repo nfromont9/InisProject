@@ -24,8 +24,11 @@ public class Lobby extends JFrame {
         initComponents();
         createMenuAccueil();
         createViewAccueil();
-        adjust();
+        Utils.adjust(this);
+        Utils.setSize(this, WIDTH, HEIGHT);
+        this.setLocationRelativeTo(null);
     }
+
 
     private void initComponents() {
         final int BUT_WIDTH=300, BUT_HEIGHT=150;
@@ -50,10 +53,6 @@ public class Lobby extends JFrame {
                 .getImage().getScaledInstance(BUT_WIDTH/2, BUT_HEIGHT/2, Image.SCALE_SMOOTH)));
         butStartGame.setBorder(BorderFactory.createEmptyBorder());
         butStartGame.setContentAreaFilled(false);
-
-        butPartieDecouverte.setBorder(BorderFactory.createEmptyBorder());
-        butPartieNormale.setBorder(BorderFactory.createEmptyBorder());
-        butStartGame.setBorder(BorderFactory.createEmptyBorder());
 
         jmiNewGame = new JMenuItem("Nouvelle partie");
         jmiLoadGame = new JMenuItem("Charger une partie");
@@ -113,11 +112,11 @@ public class Lobby extends JFrame {
     }
 
     public void switchViews() {
-        display(false);
+        Utils.display(this, false);
 
         createViewLobby();
 
-        display(true);
+        Utils.display(this, true);
     }
 
     private void createViewLobby() {
@@ -176,30 +175,6 @@ public class Lobby extends JFrame {
         createLobbyBG();
     }
 
-    public void display(Boolean b) {
-        this.setVisible(b);
-    }
-
-    private void adjust() {
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setTitle("Inis");
-        this.setIconImage(new ImageIcon(new ImageIcon("images/app/icone.png")
-                .getImage().getScaledInstance(256, 256, Image.SCALE_SMOOTH)).getImage());
-
-        this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        this.pack();
-        this.setResizable(false);
-        center();
-    }
-
-    private void center() {
-        this.setLocationRelativeTo(null);
-        /*Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth()/2-this.getWidth()/2;
-        double height = screenSize.getHeight()/2-this.getHeight()/2;
-        setLocation((int)width, (int)height);*/
-    }
-
     public void setControlButtons(ActionListener al) {
         butPartieNormale.addActionListener(al);
         butPartieDecouverte.addActionListener(al);
@@ -253,4 +228,5 @@ public class Lobby extends JFrame {
     public JPanel getPanPlayerNames() {
         return panPlayerNames;
     }
+
 }

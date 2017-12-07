@@ -3,6 +3,7 @@ package Controllers;
 import Models.Joueur;
 import Models.Model;
 import Views.Lobby;
+import Views.Utils;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,6 +33,8 @@ public class ControlButtonLobby implements ActionListener {
             String str = lobby.getTabTF()[i].getText();
             model.getJoueurs()[i] = new Joueur(str);
         }
+        Utils.display(lobby, false);
+
     }
 
     private void actionJcbNbJoueurs() {
