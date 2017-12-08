@@ -3,7 +3,6 @@ package Views;
 import Models.Model;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Gamepanel extends JFrame {
@@ -17,6 +16,7 @@ public class Gamepanel extends JFrame {
         createMenuAccueil();
         createViewAccueil();
         Utils.adjust(this);
+        this.setLocationRelativeTo(null);
     }
 
     private void initComponents() {

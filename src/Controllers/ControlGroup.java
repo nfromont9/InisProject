@@ -1,11 +1,19 @@
 package Controllers;
 
 import Models.Model;
+import Views.Gamepanel;
 import Views.Lobby;
 import Views.Utils;
 
 public class ControlGroup {
-    public ControlGroup(Model model) {
+    Model model;
+
+    public ControlGroup(Model amodel) {
+        model = amodel;
+        createLobby();
+    }
+
+    private void createLobby() {
         Lobby lobby = new Lobby(model);
 
         new ControlButtonLobby(model, lobby);

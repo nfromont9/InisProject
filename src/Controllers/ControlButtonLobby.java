@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.Joueur;
 import Models.Model;
+import Views.Gamepanel;
 import Views.Lobby;
 import Views.Utils;
 
@@ -34,7 +35,14 @@ public class ControlButtonLobby implements ActionListener {
             model.getJoueurs()[i] = new Joueur(str);
         }
         Utils.display(lobby, false);
+        createGP();
+    }
 
+    private void createGP() {
+        Gamepanel gp = new Gamepanel(model);
+        new ControlMenuGP(model, gp);
+        new ControlButtonGP(model, gp);
+        Utils.display(gp, true);
     }
 
     private void actionJcbNbJoueurs() {
