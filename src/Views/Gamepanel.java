@@ -54,23 +54,25 @@ public class Gamepanel extends JFrame {
         JPanel panTerrain = new JPanel(), panPioche = new JPanel(), panDefausse = new JPanel();
         JPanel panMain = new JPanel(), panReserve = new JPanel(), panCommandes = new JPanel();
 
-        panTerrain.setMinimumSize(new Dimension(1000, 700));
-        panTerrain.setPreferredSize(new Dimension(1000, 700));
+        final int W1=1000, W2=300, H1=600, H2=300;
+
+        panTerrain.setMinimumSize(new Dimension(W1, H1));
+        panTerrain.setPreferredSize(new Dimension(W1, H1));
         panTerrain.setBackground(new Color(20, 20, 20));
-        panPioche.setMinimumSize(new Dimension(300, 700));
-        panPioche.setPreferredSize(new Dimension(300, 700));
+        panPioche.setMinimumSize(new Dimension(W2, H1));
+        panPioche.setPreferredSize(new Dimension(W2, H1));
         panPioche.setBackground(new Color(50, 80, 100));
-        panDefausse.setMinimumSize(new Dimension(300, 700));
-        panDefausse.setPreferredSize(new Dimension(300, 700));
+        panDefausse.setMinimumSize(new Dimension(W2, H1));
+        panDefausse.setPreferredSize(new Dimension(W2, H1));
         panDefausse.setBackground(new Color(10, 255, 20));
-        panMain.setMinimumSize(new Dimension(1000, 200));
-        panMain.setPreferredSize(new Dimension(1000, 200));
+        panMain.setMinimumSize(new Dimension(W1, H2));
+        panMain.setPreferredSize(new Dimension(W1, H2));
         panMain.setBackground(new Color(200, 0, 20));
-        panReserve.setMinimumSize(new Dimension(300, 200));
-        panReserve.setPreferredSize(new Dimension(300, 200));
+        panReserve.setMinimumSize(new Dimension(W2, H2));
+        panReserve.setPreferredSize(new Dimension(W2, H2));
         panReserve.setBackground(new Color(20, 20, 200));
-        panCommandes.setMinimumSize(new Dimension(300, 200));
-        panCommandes.setPreferredSize(new Dimension(300, 200));
+        panCommandes.setMinimumSize(new Dimension(W2, H2));
+        panCommandes.setPreferredSize(new Dimension(W2, H2));
         panCommandes.setBackground(new Color(20, 200, 200));
 
         JPanel panContainer = new JPanel(new GridBagLayout());
