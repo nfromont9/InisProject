@@ -37,9 +37,21 @@ public class Cards {
             epicStoryCardStack.add(new Card(epicStoryCardNames[i].getName(), Card.EPIC_STORY_CARD ,epicStoryCardNames[i].getCode(), 0, false, false));
         }
         for (int i = 0; i < advantageCardNames.length; i++) {
-            advantageCardStack.add(new Card(advantageCardNames[i].getName(), Card.ADVANTAGE_CARD ,advantageCardNames[i].getCode(), 0, false, false));
+            advantageCardStack.add(new Card(advantageCardNames[i].getName(), Card.ADVANTAGE_CARD ,advantageCardNames[i].getCode(), 0, true, false));
         }
         Collections.shuffle(actionCardStack);
         Collections.shuffle(epicStoryCardStack);
+    }
+
+    public List<Card> getActionCardStack() {
+        return actionCardStack;
+    }
+
+    public List<Card> getEpicStoryCardStack() {
+        return epicStoryCardStack;
+    }
+
+    public List<Card> getAdvantageCardStack() {
+        return advantageCardStack;
     }
 }
