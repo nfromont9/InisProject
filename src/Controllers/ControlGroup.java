@@ -1,7 +1,6 @@
 package Controllers;
 
 import Models.Model;
-import Views.Gamepanel;
 import Views.Lobby;
 import Views.Utils;
 

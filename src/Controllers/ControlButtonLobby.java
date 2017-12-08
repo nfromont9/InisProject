@@ -27,6 +27,13 @@ public class ControlButtonLobby implements ActionListener {
         if (e.getSource()==lobby.getButStartGame()) actionStartGame();
     }
 
+    private void createGP() {
+        Gamepanel gp = new Gamepanel(model);
+        new ControlMenuGP(model, gp);
+        new ControlButtonGP(model, gp);
+        Utils.display(gp, true);
+    }
+
     private void actionStartGame() {
         System.out.println("démarrage de la partie");
         model.setNbJoueurs(lobby.getJcbNbJoueurs().getSelectedIndex()+2);
@@ -36,13 +43,6 @@ public class ControlButtonLobby implements ActionListener {
         }
         Utils.display(lobby, false);
         createGP();
-    }
-
-    private void createGP() {
-        Gamepanel gp = new Gamepanel(model);
-        new ControlMenuGP(model, gp);
-        new ControlButtonGP(model, gp);
-        Utils.display(gp, true);
     }
 
     private void actionJcbNbJoueurs() {
