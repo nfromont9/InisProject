@@ -31,6 +31,7 @@ public class ControlButtonLobby implements ActionListener {
         Gamepanel gp = new Gamepanel(model);
         new ControlMenuGP(model, gp);
         new ControlButtonGP(model, gp);
+        new ListenerGP(model, gp);
         Utils.display(gp, true);
     }
 
