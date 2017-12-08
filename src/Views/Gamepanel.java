@@ -74,17 +74,15 @@ public class Gamepanel extends JFrame {
         panCommandes.setBackground(new Color(20, 200, 200));
 
         JPanel panContainer = new JPanel(new GridBagLayout());
-        GridBagConstraints c = getGBC(1000, 700);
 
-        panContainer.add(panTerrain, c);
-        panContainer.add(panPioche);
-        panContainer.add(panDefausse);
-        panContainer.add(panMain);
-        panContainer.add(panReserve);
-        panContainer.add(panCommandes);
+        panContainer.add(panTerrain, getGBC(0, 0));
+        panContainer.add(panPioche, getGBC(1, 0));
+        panContainer.add(panDefausse, getGBC(2, 0));
+        panContainer.add(panMain, getGBC(0, 1));
+        panContainer.add(panReserve, getGBC(1, 1));
+        panContainer.add(panCommandes, getGBC(2, 1));
 
         this.setContentPane(panContainer);
-
     }
 
     private GridBagConstraints getGBC(int gridx, int gridy) {
